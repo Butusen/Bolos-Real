@@ -16,6 +16,18 @@ class MyTestCase(unittest.TestCase):
         suma = partida.calcularPuntos(ronda)
         self.assertEqual(5, suma)
 
+    def test_suma_19(self):
+        partida = Bolos()
+        ronda = "113563--------------"
+        suma = partida.calcularPuntos(ronda)
+        self.assertEqual(19, suma)
+
+    def test_suma_40(self):
+        partida = Bolos()
+        ronda = "44358---35--8-------"
+        suma = partida.calcularPuntos(ronda)
+        self.assertEqual(40, suma)
+
 
 
 
