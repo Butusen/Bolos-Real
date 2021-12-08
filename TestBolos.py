@@ -34,6 +34,12 @@ class MyTestCase(unittest.TestCase):
         suma = partida.calcularPuntos(ronda)
         self.assertEqual(5+17+7, suma)
 
+    def test_spare(self):
+        partida = Bolos()
+        ronda = "1/3---43------------"
+        suma = partida.calcularPuntos(ronda)
+        self.assertEqual(13+7, suma)
+
 
 
 
