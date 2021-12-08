@@ -28,6 +28,12 @@ class MyTestCase(unittest.TestCase):
         suma = partida.calcularPuntos(ronda)
         self.assertEqual(40, suma)
 
+    def test_strike(self):
+        partida = Bolos()
+        ronda = "113-X-43------------"
+        suma = partida.calcularPuntos(ronda)
+        self.assertEqual(5+17+7, suma)
+
 
 
 
