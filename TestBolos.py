@@ -30,7 +30,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_strike(self):
         partida = Bolos()
-        ronda = "113-x-43------------"
+        ronda = "113-x43------------"
         suma = partida.calcularPuntos(ronda)
         self.assertEqual(5+17+7, suma)
 
@@ -39,6 +39,32 @@ class MyTestCase(unittest.TestCase):
         ronda = "1/35--43------------"
         suma = partida.calcularPuntos(ronda)
         self.assertEqual(13+8+7, suma)
+
+    def test_spare_strike(self):
+        partida = Bolos()
+        ronda = "113/x43------------"
+        suma = partida.calcularPuntos(ronda)
+        self.assertEqual(2+20+17+7, suma)
+
+    def test_strike_spare(self):
+        partida = Bolos()
+        ronda = "14x2/53-----------"
+        suma = partida.calcularPuntos(ronda)
+        self.assertEqual(20+15+8+5, suma)
+
+    def test_strike_spare_strike(self):
+        partida = Bolos()
+        ronda = "x2/x43-----------"
+        suma = partida.calcularPuntos(ronda)
+        self.assertEqual(20+20+17+7, suma)
+
+    def test_spare_strike_spare(self):
+        partida = Bolos()
+        ronda = "2/x4/43----------"
+        suma = partida.calcularPuntos(ronda)
+        self.assertEqual(20+20+14+7, suma)
+
+
 
 
 
